@@ -88,6 +88,16 @@ fn main() {
         TimerFuture::new(Duration::new(2, 0)).await;
         println!("Zakiy's Computer: done!");
     });
+    spawner.spawn(async {
+        println!("Zakiy's Computer: howdy1!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Zakiy's Computer: done2!");
+    });
+    spawner.spawn(async {
+        println!("Zakiy's Computer: howdy3!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Zakiy's Computer: done3!");
+    });
     println!("Zakiy's: Computer:hey now");
 
     drop(spawner); // No more tasks will be spawned
